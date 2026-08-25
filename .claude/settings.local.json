@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_in_Chrome__browser_batch",
+      "mcp__Claude_in_Chrome__computer",
+      "mcp__Claude_in_Chrome__javascript_tool",
+      "Bash(awk '/@media \\\\\\(max-width: 600px\\\\\\)/{f=1} f{print} f&&/^}/{c++} f&&c>=1&&/grid-template|display|flex-direction|font-size/{}' app/globals.css)",
+      "Bash(perl -0777 -ne 'while\\(/\\\\@media \\\\\\(max-width: \\(480|600\\)px\\\\\\)\\\\s*\\\\{\\(.*?\\)\\\\n\\\\}/gs\\){print \"--- max-width:$1 ---\\\\n\"; my $b=$2; while\\($b=~/\\([.#][\\\\w-]+\\)\\\\s*\\\\{[^}]*?\\(grid-template-columns|flex-direction|display\\)\\\\s*:\\\\s*\\([^;]+\\);/gs\\){print \"  $1 -> $2: $3\\\\n\";}}' app/globals.css)",
+      "mcp__Claude_in_Chrome__resize_window",
+      "Bash(curl -s http://localhost:3001/)",
+      "Bash(curl -s http://localhost:3001/capabilities)",
+      "Bash(curl -s -o /dev/null -w \"status=%{http_code} type=%{content_type} bytes=%{size_download}\\\\n\" http://localhost:3001/opengraph-image)",
+      "Bash(curl -s -o /dev/null -w \"status=%{http_code} type=%{content_type}\\\\n\" http://localhost:3001/icon.svg)",
+      "Bash(curl -s -o /dev/null -w \"status=%{http_code} type=%{content_type}\\\\n\" http://localhost:3001/apple-icon)",
+      "mcp__Claude_in_Chrome__navigate",
+      "Bash(curl -s --max-time 15 http://localhost:3001/robots.txt)",
+      "Bash(curl -s --max-time 15 http://localhost:3001/sitemap.xml)",
+      "Bash(curl -s -o /dev/null -w \"home: %{http_code} in %{time_total}s\\\\n\" --max-time 10 http://localhost:3001/)",
+      "Bash(curl -s -o /dev/null -w \"skilling: %{http_code} in %{time_total}s\\\\n\" --max-time 10 http://localhost:3001/skilling)",
+      "Bash(ps -p 93375 -o pid,stat,command)",
+      "Bash(xargs kill -9)",
+      "Bash(git commit -m ' *)",
+      "Bash(react-doctor --staged --fail-on warning)",
+      "Bash(echo \"\\(exit $?\\)\")",
+      "Bash(npx --yes react-doctor@latest --verbose)",
+      "Bash(curl -s --max-time 15 http://localhost:3001/)",
+      "Bash(git add *)",
+      "Bash(node -e ' *)"
+    ]
+  }
+}
