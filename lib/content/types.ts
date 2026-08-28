@@ -56,6 +56,19 @@ export interface Partner {
   sub?: string
   style?: 'sans' | 'mono' | 'italic'
 }
+
+/**
+ * A person on the leadership/team pages. `photo`, `bio` and `linkedin` are
+ * optional so a card renders gracefully (initials monogram, no bio, no
+ * LinkedIn icon) before those assets are supplied.
+ */
+export interface Person {
+  name: string
+  role: string
+  bio?: string
+  photo?: string
+  linkedin?: string
+}
 export interface Location {
   label: string
   name: string

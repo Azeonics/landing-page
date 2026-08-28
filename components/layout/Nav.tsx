@@ -6,6 +6,7 @@ import { TransitionLink } from '@/components/layout/PageTransition';
 
 const PRIMARY_LINKS = [
   { href: '/', label: 'The Hub' },
+  { href: '/about', label: 'About' },
   { href: '/capabilities', label: 'Capabilities' },
   { href: '/skilling', label: 'Skilling' },
   { href: '/catalog', label: 'Catalog' }
@@ -16,7 +17,7 @@ const MOBILE_EXTRA_LINKS = [
   { href: '/contact#partners', label: 'Partners' }
 ] as const;
 
-const EARTH_NOW_URL = 'https://en.azeonics.com';
+const EARTH_NOW_URL = 'https://earthnow.tech';
 
 function ExtIcon({ className }: { className?: string }) {
   return (
