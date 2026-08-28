@@ -42,6 +42,10 @@
   /* Rhythm */
   --space-section: clamp(5rem, 3.5rem + 6vw, 11rem);
 
+  /* Layout container — scaled up on large displays (see large-screen block) */
+  --wrap-max: 1440px;
+  --wrap-pad: 48px;
+
   /* Motion */
   --duration-fast: 150ms;
   --duration-normal: 300ms;
@@ -59,8 +63,8 @@ img { max-width: 100%; display: block; }
 h1, h2, h3, h4, p { overflow-wrap: break-word; }
 ::selection { background: var(--teal); color: var(--bg); }
 
-  .wrap { max-width: 1440px; margin: 0 auto; padding: 0 48px; }
-  @media (max-width: 720px) { .wrap { padding: 0 24px; } }
+  .wrap { max-width: var(--wrap-max); margin: 0 auto; padding: 0 var(--wrap-pad); }
+  @media (max-width: 720px) { :root { --wrap-pad: 24px; } }
 
   /* Anchor targets clear the sticky nav */
   section { scroll-margin-top: 80px; }
@@ -142,8 +146,7 @@ h1, h2, h3, h4, p { overflow-wrap: break-word; }
 
   /* ============ MISSION NAV ============ */
   .mnav { position: sticky; top: 0; z-index: 50; background: color-mix(in oklab, var(--bg) 78%, transparent); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); }
-  .mnav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 12px 48px; }
-  @media (max-width: 720px) { .mnav-inner { padding: 12px 24px; } }
+  .mnav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; max-width: var(--wrap-max); margin: 0 auto; padding: 12px var(--wrap-pad); }
 
   .mnav-brand { display: flex; flex-direction: column; align-items: center; gap: 6px; }
   .mnav-wordmark { height: 34px; width: auto; display: block; }
@@ -692,11 +695,14 @@ h1, h2, h3, h4, p { overflow-wrap: break-word; }
       radial-gradient(120% 95% at 50% 0%, color-mix(in oklab, var(--teal) 10%, var(--bg-2)) 0%, var(--bg-2) 55%, var(--bg) 100%);
   }
   .mteam-ph-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); }
+  .mteam-fig { margin: 0; }
+  .mteam-cap { margin-top: 16px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); }
 
   /* ============ PEOPLE — KEY PEOPLE & HODS ============ */
   .mppl { padding: var(--space-section) 0; background: var(--bg); }
   .mppl--band { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .mppl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 56px; }
+  .mppl-intro { margin-top: 20px; max-width: 62ch; font-size: 16px; line-height: 1.65; color: var(--ink-2); }
+  .mppl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; }
   .mppl-grid > * { min-width: 0; }
   @media (max-width: 980px) { .mppl-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 560px) { .mppl-grid { grid-template-columns: 1fr; } }
@@ -712,27 +718,42 @@ h1, h2, h3, h4, p { overflow-wrap: break-word; }
     transform: translateY(-3px);
   }
   .mppl-photo { position: relative; aspect-ratio: 3 / 4; background: var(--bg-2); display: grid; place-items: center; overflow: hidden; }
-  .mppl-img { object-fit: cover; }
+  /* Subtle depth gradient so the photo reads into the card body. */
+  .mppl-photo::after {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(to bottom, transparent 62%, color-mix(in oklab, var(--bg-card) 55%, transparent) 100%);
+  }
+  .mppl-img { object-fit: cover; transition: transform 0.6s var(--ease-out-expo); }
+  .mppl-card:hover .mppl-img { transform: scale(1.05); }
   .mppl-monogram {
     font-family: var(--serif); font-weight: 400; font-size: clamp(2.4rem, 1.6rem + 3vw, 3.4rem);
     letter-spacing: 0.02em; color: color-mix(in oklab, var(--teal) 65%, var(--ink-3));
     width: 100%; height: 100%; display: grid; place-items: center;
     background: radial-gradient(90% 70% at 50% 30%, color-mix(in oklab, var(--teal) 12%, var(--bg-card)) 0%, var(--bg-2) 70%);
   }
-  .mppl-body { display: flex; flex-direction: column; gap: 8px; padding: 20px; }
+  .mppl-body { flex: 1; display: flex; flex-direction: column; gap: 7px; padding: 22px 20px; }
   .mppl-name { font-family: var(--serif); font-weight: 400; font-size: 22px; line-height: 1.15; letter-spacing: -0.01em; color: var(--ink); }
   .mppl-role { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); }
-  .mppl-bio { font-size: 14px; line-height: 1.6; color: var(--ink-2); margin-top: 2px; }
+  .mppl-bio { font-size: 13.5px; line-height: 1.62; color: var(--ink-2); margin-top: 3px; }
   .mppl-linkedin {
-    display: inline-flex; align-items: center; gap: 7px; margin-top: 8px;
+    align-self: flex-start; margin-top: auto; padding: 7px 13px 7px 11px;
+    display: inline-flex; align-items: center; gap: 7px;
+    border: 1px solid var(--line); border-radius: 999px; background: var(--bg-2);
     font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3);
-    transition: color var(--duration-fast);
+    transition: color var(--duration-fast), border-color var(--duration-fast), background var(--duration-fast);
   }
-  .mppl-linkedin svg { width: 14px; height: 14px; }
-  .mppl-linkedin:hover { color: var(--teal); }
+  /* Keep a breathing gap above the pinned chip even when the bio is short. */
+  .mppl-bio + .mppl-linkedin, .mppl-role + .mppl-linkedin { margin-top: 16px; }
+  .mppl-linkedin svg { width: 13px; height: 13px; }
+  .mppl-linkedin:hover {
+    color: var(--teal);
+    border-color: color-mix(in oklab, var(--teal) 45%, transparent);
+    background: color-mix(in oklab, var(--teal) 8%, var(--bg-2));
+  }
   @media (prefers-reduced-motion: reduce) {
     .mppl-card { transition: none; }
     .mppl-card:hover { transform: none; }
+    .mppl-img, .mppl-card:hover .mppl-img { transition: none; transform: none; }
   }
 
   /* ============ PARTNERS — NAME GRID ============ */
@@ -1092,4 +1113,65 @@ h1, h2, h3, h4, p { overflow-wrap: break-word; }
   .mfp-cell-address { font-size: 12.5px; line-height: 1.55; color: var(--ink-2); }
   @media (prefers-reduced-motion: reduce) {
     .mfp-card, .mfp-cell { transition: none; }
+  }
+
+  /* ============ LARGE-SCREEN SCALING — MONITORS · TV · LED WALLS ============
+     The layout container and the type/rhythm tokens are variable-driven, so
+     raising them here lifts every page at once: content fills big displays
+     instead of sitting in a 1440px column, display type grows, and the card
+     grids gain columns rather than stretching into sparse, oversized cells.
+     Real devices reporting these CSS widths: 27"/32" monitors, 4K/8K TVs and
+     large LED walls (those usually run at native resolution with no OS scaling). */
+
+  /* ≥1600px — large laptops & 1080p external monitors */
+  @media (min-width: 1600px) {
+    :root { --wrap-max: 1560px; --wrap-pad: 64px; }
+    .mppl-grid, .mskill-prog-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  /* ≥1920px — full-HD monitors (24"–27") */
+  @media (min-width: 1920px) {
+    :root {
+      --wrap-max: 1780px;
+      --wrap-pad: 72px;
+      --text-base: clamp(1.05rem, 0.9rem + 0.4vw, 1.35rem);
+      --text-section: clamp(3rem, 1.4rem + 4vw, 5.5rem);
+      --text-hero: clamp(4rem, 1.2rem + 6.5vw, 9rem);
+      --space-section: clamp(7rem, 3.5rem + 6vw, 13rem);
+    }
+    .mcap-grid { grid-template-columns: repeat(4, 1fr); }
+    .maud-grid, .mcat-grid { grid-template-columns: repeat(5, 1fr); }
+    .mpart-grid { grid-template-columns: repeat(8, 1fr); }
+  }
+
+  /* ≥2400px — QHD / entry 4K (27"–32") */
+  @media (min-width: 2400px) {
+    :root {
+      --wrap-max: 2160px;
+      --wrap-pad: 104px;
+      --text-base: clamp(1.2rem, 0.9rem + 0.4vw, 1.6rem);
+      --text-section: clamp(3.6rem, 1.4rem + 4vw, 6.5rem);
+      --text-hero: clamp(5rem, 1.2rem + 6.5vw, 11rem);
+      --space-section: clamp(8rem, 3.5rem + 6vw, 15rem);
+    }
+    .mppl-grid, .mskill-prog-grid { grid-template-columns: repeat(5, 1fr); }
+    .maud-grid, .mcat-grid { grid-template-columns: repeat(6, 1fr); }
+  }
+
+  /* ≥3200px — 4K monitors & TVs */
+  @media (min-width: 3200px) {
+    :root {
+      --wrap-max: 2800px;
+      --wrap-pad: 160px;
+      --text-base: clamp(1.5rem, 0.9rem + 0.4vw, 2rem);
+      --text-section: clamp(4.5rem, 1.4rem + 4vw, 8rem);
+      --text-hero: clamp(6rem, 1.2rem + 6.5vw, 14rem);
+      --space-section: clamp(10rem, 3.5rem + 6vw, 18rem);
+    }
+  }
+
+  /* ≥3840px — 4K TVs, ~108" LED walls, 8K */
+  @media (min-width: 3840px) {
+    :root { --wrap-max: 3360px; --wrap-pad: 220px; }
+    .mppl-grid { grid-template-columns: repeat(6, 1fr); }
   }

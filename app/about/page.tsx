@@ -2,7 +2,17 @@ import SiteChrome from '@/components/layout/SiteChrome';
 import AboutStory from '@/components/sections/AboutStory';
 import TeamPhoto from '@/components/sections/TeamPhoto';
 import PeopleGrid from '@/components/sections/PeopleGrid';
-import { keyPeopleHead, keyPeople, hodsHead, hods, advisorsHead, advisors } from '@/lib/content/about';
+import {
+  keyPeopleHead,
+  keyPeopleIntro,
+  keyPeople,
+  hodsHead,
+  hodsIntro,
+  hods,
+  advisorsHead,
+  advisorsIntro,
+  advisors,
+} from '@/lib/content/about';
 import { pageMetadata } from '@/lib/metadata';
 
 export const metadata = pageMetadata({
@@ -17,9 +27,9 @@ export default function AboutPage() {
     <SiteChrome>
       <AboutStory />
       <TeamPhoto />
-      <PeopleGrid head={keyPeopleHead} people={keyPeople} id="key-people" band />
-      <PeopleGrid head={hodsHead} people={hods} id="hods" />
-      <PeopleGrid head={advisorsHead} people={advisors} id="advisors" band />
+      <PeopleGrid head={keyPeopleHead} intro={keyPeopleIntro} people={keyPeople} id="key-people" band />
+      <PeopleGrid head={hodsHead} intro={hodsIntro} people={hods} id="hods" />
+      <PeopleGrid head={advisorsHead} intro={advisorsIntro} people={advisors} id="advisors" band />
     </SiteChrome>
   );
 }

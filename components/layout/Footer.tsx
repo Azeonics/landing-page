@@ -44,7 +44,7 @@ export default function Footer() {
             <h5>Connect</h5>
             <ul>
               <li><Link href="/contact#contact">Contact</Link></li>
-              <li><a href="#">LinkedIn</a></li>
+              <li><a href="https://www.linkedin.com/company/azeonics" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
               <li><a href="#">Careers</a></li>
               <li><Link href="/contact#contact">Press</Link></li>
             </ul>

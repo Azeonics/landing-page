@@ -42,6 +42,9 @@ export const keyPeopleHead: SectionHead = {
   title: 'The people steering <em>the mission</em>.',
 }
 
+export const keyPeopleIntro =
+  'The leadership team setting Azeonics’ direction — across strategy, operations and growth — as we build India’s idea-to-orbit ecosystem.'
+
 // Order is intentional — do not re-sort.
 // TODO: add `bio` and `linkedin` for each as they are supplied.
 // Ravi Nirgudkar (Chief Strategic Officer) has no photo yet — renders the "RN" monogram.
@@ -91,6 +94,9 @@ export const hodsHead: SectionHead = {
   name: 'Heads of Department',
   title: 'The leaders <em>running the floor</em>.',
 }
+
+export const hodsIntro =
+  'The department heads who turn the mission into delivered hardware and services — day in, day out, across sales, aerospace and engineering.'
 
 // Order is intentional — do not re-sort.
 // TODO: add `bio` and `linkedin` for each as they are supplied.
@@ -147,6 +153,9 @@ export const advisorsHead: SectionHead = {
   name: 'Honorary Advisors',
   title: 'Guided by <em>the best</em> in the field.',
 }
+
+export const advisorsIntro =
+  'Distinguished academic and industry experts who guide our technical and strategic direction across aerospace and space systems.'
 
 // Order is intentional — do not re-sort.
 export const advisors: Person[] = [

@@ -31,7 +31,7 @@ export default function PersonCard({ person }: { person: Person }) {
             src={photo}
             alt={name}
             fill
-            sizes="(max-width: 560px) 92vw, (max-width: 980px) 46vw, 420px"
+            sizes="(max-width: 560px) 92vw, (max-width: 980px) 46vw, (max-width: 1600px) 30vw, 520px"
             loading="lazy"
             className="mppl-img"
           />
