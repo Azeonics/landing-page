@@ -52,14 +52,14 @@ export const keyPeople: Person[] = [
   {
     name: 'B N Raao',
     role: 'CEO & MD',
-    bio: 'CEO & Managing Director of Azeonics, and CEO & Director of Earth Now — driving the company’s Idea-to-Orbit vision across precision manufacturing, space-tech skilling and Earth intelligence. A Jawaharlal Nehru Technological University alumnus.',
+    bio: 'CEO of Azeonics and CEO & Director of Earth Now, with over 25 years of leadership across geospatial technologies, space applications, remote sensing, AI-driven analytics, digital twins and aerospace innovation. He is building Azeonics and Earth Now as institutions for the next generation of satellite missions, intelligent infrastructure, climate solutions and advanced manufacturing — turning ideas into innovation, innovation into capability, and capability into national and global impact.',
     photo: '/assets/team-photos/BN-Rao.JPG',
     linkedin: 'https://www.linkedin.com/in/b-n-raao-87898085/',
   },
   {
     name: 'Ravi Nirgudkar',
     role: 'Chief Strategic Officer',
-    bio: 'CEO of RFLY Innovations and a seasoned aerospace, defence and manufacturing leader; National Executive Board member and Defense Committee Co-Chair at AMCHAM, with prior leadership at BAE Systems and Raytheon.',
+    bio: 'Global aerospace, defence and space executive with 20+ years of leadership driving enterprise transformation, mission-critical operations and strategic growth across highly regulated national-security and advanced-technology sectors. Formerly Managing Director for India, Bangladesh & Sri Lanka at BAE Systems, and earlier at Raytheon Technologies, where he delivered programs for the US Navy and NASA.',
     photo: '/assets/team-photos/Ravi-Nirgudkar.jpg',
     linkedin: 'https://www.linkedin.com/in/nirgudkar',
   },

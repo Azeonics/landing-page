@@ -67,7 +67,7 @@ export const hubParagraphs: string[] = [
 export const hubMeta: MetaRow[] = [
   { k: 'Legal Entity', v: 'Azeonics Private Limited' },
   { k: 'Headquarters', v: 'Thane, Maharashtra, India' },
-  { k: 'Manufacturing', v: 'Taloja, Maharashtra' },
+  { k: 'Manufacturing', v: 'Navi Mumbai' },
   { k: 'Focus', v: 'Drones · Satellites · Aerospace' },
   { k: 'Model', v: 'Pay-per-use, MaaS' },
   { k: 'Standards', v: 'ISRO-grade · ISO 9001 · AS9100' },
