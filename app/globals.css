@@ -1196,7 +1196,10 @@ h1, h2, h3, h4, p { overflow-wrap: break-word; }
   /* ≥1600px — large laptops & 1080p external monitors */
   @media (min-width: 1600px) {
     :root { --wrap-max: 1560px; --wrap-pad: 64px; }
-    .mppl-grid, .mskill-prog-grid { grid-template-columns: repeat(4, 1fr); }
+    /* Only grids whose item counts divide evenly gain columns up here —
+       maud (4 cards) and mskill-prog (3) keep their natural column counts
+       so no track is ever left permanently empty. */
+    .mppl-grid { grid-template-columns: repeat(4, 1fr); }
     /* Keep the capabilities filmstrip proportional to the viewport so the
        4-frame track always overflows it (the drift needs offscreen edges);
        the 460px cap otherwise strands the strip on the left of wide screens. */
@@ -1213,9 +1216,17 @@ h1, h2, h3, h4, p { overflow-wrap: break-word; }
       --text-hero: clamp(4rem, 1.2rem + 6.5vw, 9rem);
       --space-section: clamp(7rem, 3.5rem + 6vw, 13rem);
     }
-    .mcap-grid { grid-template-columns: repeat(4, 1fr); }
-    .maud-grid, .mcat-grid { grid-template-columns: repeat(5, 1fr); }
+    .mcat-grid { grid-template-columns: repeat(5, 1fr); }
     .mpart-grid { grid-template-columns: repeat(8, 1fr); }
+    /* Careers/press are a single text column — center it instead of leaving
+       it stranded against the left edge of the very wide wrap. */
+    .mlead-inner { max-width: 1080px; margin-inline: auto; }
+    /* Pinned pipeline: let the trajectory arc and stage number grow with the
+       viewport so the composition fills a 1440p+/4K frame. */
+    .mpipe-traj { width: clamp(420px, 26vw, 760px); }
+    .mpipe-traj-svg { max-height: min(80svh, 960px); }
+    .mpipe-content { min-height: 560px; }
+    .mpipe-stage-bignum { font-size: clamp(120px, 5vw + 40px, 200px); }
   }
 
   /* ≥2400px — QHD / entry 4K (27"–32") */
@@ -1228,8 +1239,9 @@ h1, h2, h3, h4, p { overflow-wrap: break-word; }
       --text-hero: clamp(5rem, 1.2rem + 6.5vw, 11rem);
       --space-section: clamp(8rem, 3.5rem + 6vw, 15rem);
     }
-    .mppl-grid, .mskill-prog-grid { grid-template-columns: repeat(5, 1fr); }
-    .maud-grid, .mcat-grid { grid-template-columns: repeat(6, 1fr); }
+    /* Both 6-person groups (leadership, HODs) land on one clean row. */
+    .mppl-grid { grid-template-columns: repeat(6, 1fr); }
+    .mcat-grid { grid-template-columns: repeat(6, 1fr); }
   }
 
   /* ≥3200px — 4K monitors & TVs */
@@ -1247,5 +1259,4 @@ h1, h2, h3, h4, p { overflow-wrap: break-word; }
   /* ≥3840px — 4K TVs, ~108" LED walls, 8K */
   @media (min-width: 3840px) {
     :root { --wrap-max: 3360px; --wrap-pad: 220px; }
-    .mppl-grid { grid-template-columns: repeat(6, 1fr); }
   }
