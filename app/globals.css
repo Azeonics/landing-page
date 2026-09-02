@@ -1197,6 +1197,10 @@ h1, h2, h3, h4, p { overflow-wrap: break-word; }
   @media (min-width: 1600px) {
     :root { --wrap-max: 1560px; --wrap-pad: 64px; }
     .mppl-grid, .mskill-prog-grid { grid-template-columns: repeat(4, 1fr); }
+    /* Keep the capabilities filmstrip proportional to the viewport so the
+       4-frame track always overflows it (the drift needs offscreen edges);
+       the 460px cap otherwise strands the strip on the left of wide screens. */
+    .mcapintro-frame { width: 29vw; }
   }
 
   /* ≥1920px — full-HD monitors (24"–27") */
