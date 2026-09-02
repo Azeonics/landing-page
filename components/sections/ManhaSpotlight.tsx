@@ -70,7 +70,7 @@ export default function ManhaSpotlight() {
               <div className="mmanha-media-inner" ref={parallaxRef}>
                 <Image
                   src={manhaHeroImage.src}
-                  alt={manhaHeroImage.alt ?? ''}
+                  alt={manhaHeroImage.alt ?? manhaHeroImage.placeholder ?? 'Manha nano-satellite kit'}
                   fill
                   className="mmanha-img"
                   sizes="(max-width: 980px) 100vw, 50vw"
@@ -111,7 +111,7 @@ export default function ManhaSpotlight() {
                   <div className="mmanha-extra" key={image.src}>
                     <Image
                       src={image.src}
-                      alt={image.alt ?? ''}
+                      alt={image.alt ?? image.placeholder ?? 'Manha kit detail'}
                       fill
                       className="mmanha-img"
                       sizes="(max-width: 980px) 50vw, 25vw"

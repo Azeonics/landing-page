@@ -178,7 +178,7 @@ export default function ContactSection({ id = 'contact' }: ContactSectionProps) 
               <span className="mcontact-num">{contactHead.num}</span>
               <span className="mcontact-label">{contactHead.name}</span>
             </div>
-            <h2 className="mcontact-title">{renderEm(contactHead.title)}</h2>
+            <h1 className="mcontact-title">{renderEm(contactHead.title)}</h1>
             <p className="mcontact-sub">{contactSub}</p>
             <dl className="mcontact-info">
               {contactInfo.map((row) => (

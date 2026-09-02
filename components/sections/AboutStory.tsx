@@ -18,7 +18,7 @@ export default function AboutStory({ id = 'story' }: { id?: string }) {
         <div className="mabout-grid">
           <div className="mabout-text">
             <Reveal>
-              <SectionHead head={aboutHead} />
+              <SectionHead head={aboutHead} level={1} />
             </Reveal>
             <Reveal delay={0.08}>
               <p className="mabout-lead">{aboutLead}</p>

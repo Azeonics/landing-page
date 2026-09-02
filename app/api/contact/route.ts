@@ -20,7 +20,14 @@ import {
   checkEmailDomain,
 } from './security';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Instantiate lazily: constructing at module scope throws "Missing API key"
+// during `next build` (page-data collection) in any environment without the
+// key set. Deferring to request time keeps the build resilient.
+let resendClient: Resend | null = null;
+function getResend(): Resend {
+  if (!resendClient) resendClient = new Resend(process.env.RESEND_API_KEY);
+  return resendClient;
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -220,7 +227,7 @@ export async function POST(request: NextRequest) {
     });
 
     // 11. Send email to Azeonics team
-    const result = await resend.emails.send({
+    const result = await getResend().emails.send({
       from: 'contactform@send.azeonics.com',
       to: 'info@azeonics.com',
       subject: subject,
@@ -244,7 +251,7 @@ export async function POST(request: NextRequest) {
 
     // 12. Send confirmation email to user
     try {
-      await resend.emails.send({
+      await getResend().emails.send({
         from: 'contactform@send.azeonics.com',
         to: email,
         subject: 'We Received Your Inquiry — Azeonics',

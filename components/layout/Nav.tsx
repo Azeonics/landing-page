@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { TransitionLink } from '@/components/layout/PageTransition';
 
@@ -87,12 +88,13 @@ export default function Nav() {
       <nav className="mnav" aria-label="Main navigation">
         <div className="mnav-inner">
           <TransitionLink className="mnav-brand" href="/" aria-label="Azeonics — Idea 2 Orbit">
-            <img
+            <Image
               className="mnav-wordmark"
               src="/assets/azeonics-wordmark-dark.png"
               alt="Azeonics"
               width={1876}
               height={531}
+              priority
             />
             <span className="mnav-tagline">Idea 2 Orbit</span>
           </TransitionLink>

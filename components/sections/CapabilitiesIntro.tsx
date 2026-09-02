@@ -123,7 +123,7 @@ export default function CapabilitiesIntro() {
                   fill
                   sizes="(max-width: 720px) 78vw, (max-width: 980px) 44vw, 32vw"
                   className="mcapintro-photo"
-                  priority={i < 2}
+                  priority={i < 1}
                 />
               </div>
               <figcaption className="mcapintro-caption">

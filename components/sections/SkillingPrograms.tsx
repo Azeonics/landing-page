@@ -27,7 +27,7 @@ export default function SkillingPrograms({ gallery }: SkillingProgramsProps) {
     <section className="mskill" id="skilling">
       <div className="wrap">
         <Reveal>
-          <SectionHead head={skillingHead} />
+          <SectionHead head={skillingHead} level={1} />
         </Reveal>
 
         <div className="mskill-intro">

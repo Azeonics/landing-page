@@ -1,6 +1,7 @@
 import SiteChrome from '@/components/layout/SiteChrome';
 import CapabilitiesIntro from '@/components/sections/CapabilitiesIntro';
 import CapabilitiesGrid from '@/components/sections/CapabilitiesGrid';
+import CapabilityAssembly from '@/components/sections/CapabilityAssembly';
 import Maas from '@/components/sections/Maas';
 import Gsaas from '@/components/sections/Gsaas';
 import { pageMetadata } from '@/lib/metadata';
@@ -17,6 +18,7 @@ export default function CapabilitiesPage() {
     <SiteChrome>
       <CapabilitiesIntro />
       <CapabilitiesGrid withHead={false} />
+      <CapabilityAssembly />
       <Maas />
       <Gsaas />
     </SiteChrome>

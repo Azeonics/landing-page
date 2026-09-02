@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -7,7 +8,7 @@ export default function Footer() {
         <div className="mfoot-grid">
           <div className="mfoot-brand">
             <Link className="mfoot-brand-link" href="/" aria-label="Azeonics">
-              <img
+              <Image
                 className="mfoot-wordmark"
                 src="/assets/azeonics-wordmark-dark.png"
                 alt="Azeonics"
@@ -36,7 +37,7 @@ export default function Footer() {
               <li><Link href="/capabilities">Ground Station as a Service</Link></li>
               <li><Link href="/skilling">Skilling</Link></li>
               <li><a href="https://earthnow.tech" target="_blank" rel="noopener noreferrer">Earth Now</a></li>
-              <li><Link href="/contact#audience">Who we serve</Link></li>
+              <li><Link href="/#audience">Who we serve</Link></li>
               <li><Link href="/contact#partners">Partners</Link></li>
             </ul>
           </div>
@@ -45,8 +46,8 @@ export default function Footer() {
             <ul>
               <li><Link href="/contact#contact">Contact</Link></li>
               <li><a href="https://www.linkedin.com/company/azeonics" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><Link href="/contact#contact">Press</Link></li>
+              <li><Link href="/careers">Careers</Link></li>
+              <li><Link href="/press">Press</Link></li>
             </ul>
           </div>
         </div>

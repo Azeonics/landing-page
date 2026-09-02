@@ -2,10 +2,13 @@ import type { Page } from '@playwright/test';
 
 export const PAGES = [
   { name: 'home', path: '/' },
+  { name: 'about', path: '/about' },
   { name: 'capabilities', path: '/capabilities' },
   { name: 'skilling', path: '/skilling' },
   { name: 'catalog', path: '/catalog' },
   { name: 'contact', path: '/contact' },
+  { name: 'careers', path: '/careers' },
+  { name: 'press', path: '/press' },
 ] as const;
 
 /** Hide the Next.js dev-tools indicator so it never lands in screenshots. */
@@ -35,18 +38,23 @@ export async function loadLazyImages(page: Page): Promise<void> {
     }
   });
   await page.waitForLoadState('networkidle');
+  // Cap the wait: a lazy image in a hidden container (e.g. the page-wipe
+  // overlay) never intersects, so it would otherwise pend forever.
   await page.evaluate(() =>
-    Promise.all(
-      Array.from(document.images)
-        .filter((img) => !img.complete)
-        .map(
-          (img) =>
-            new Promise((resolve) => {
-              img.addEventListener('load', resolve, { once: true });
-              img.addEventListener('error', resolve, { once: true });
-            })
-        )
-    )
+    Promise.race([
+      Promise.all(
+        Array.from(document.images)
+          .filter((img) => !img.complete)
+          .map(
+            (img) =>
+              new Promise((resolve) => {
+                img.addEventListener('load', resolve, { once: true });
+                img.addEventListener('error', resolve, { once: true });
+              })
+          )
+      ),
+      new Promise((resolve) => setTimeout(resolve, 10_000)),
+    ])
   );
   await page.evaluate(() => window.scrollTo(0, 0));
 }

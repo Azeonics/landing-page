@@ -9,7 +9,7 @@ import type {
 // ============ SKILLING ============
 
 export const skillingHead: SectionHead = {
-  num: '06 —',
+  num: '07 —',
   name: 'Skilling',
   title:
     'From <em>classroom</em> to CubeSat — the most accessible space-tech training in India.',
@@ -26,6 +26,7 @@ export const skillingImages: ImageRef[] = [
   { src: '/assets/manha-blueprint-crop.png', alt: 'Manha blueprint' },
   {
     src: '/DATE-22-05-2026/WhatsApp Image 2026-05-22 at 11.04.21.jpeg',
+    alt: 'Skilling cohort during a hands-on training session',
     placeholder: 'Cohort photo',
   },
 ]

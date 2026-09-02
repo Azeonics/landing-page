@@ -14,6 +14,51 @@ export const capabilitiesHead: SectionHead = {
   title: 'Six capabilities, one <em>integrated</em> floor.',
 }
 
+// ============ ASSEMBLY — scroll-driven satellite build ============
+
+export const assemblyHead: SectionHead = {
+  num: '04 —',
+  name: 'The Build',
+  title: 'Watch a satellite <em>come together</em>.',
+}
+
+export const assemblySub =
+  'Scroll to run the floor: every stage below is a real capability in the hub, in the order your hardware moves through it.'
+
+/** One caption per scrub stage — order matches the 3D assembly timeline. */
+export const assemblyStages: { num: string; title: string; desc: string }[] = [
+  {
+    num: 'A/01',
+    title: 'Precision Machining',
+    desc: 'The structure is born — 5-axis CNC rails and frames cut to ±5 µm.',
+  },
+  {
+    num: 'A/02',
+    title: 'Metal Additive',
+    desc: 'Printed thruster blocks and brackets join the chassis.',
+  },
+  {
+    num: 'A/03',
+    title: 'Electronics & Sensors',
+    desc: 'The PCB stack slides in — OBC, EPS, ADCS and payload boards.',
+  },
+  {
+    num: 'A/04',
+    title: 'Qualification',
+    desc: 'Vibration, TVAC and EMI/EMC — the assembly is shaken and scanned.',
+  },
+  {
+    num: 'A/05',
+    title: 'Cleanroom Integration',
+    desc: 'Skins close, solar wings deploy, the antenna extends — ISO-class hands.',
+  },
+  {
+    num: 'A/06',
+    title: 'Flight Ready',
+    desc: 'Qualified, integrated, and ready for orbit.',
+  },
+]
+
 export const capabilities: Capability[] = [
   {
     num: 'CP/01',
@@ -62,7 +107,7 @@ export const capabilities: Capability[] = [
 // ============ MaaS ============
 
 export const maasHead: SectionHead = {
-  num: '04 —',
+  num: '05 —',
   name: 'Manufacturing as a Service',
   title: 'Pay only for what you <em>use</em>.',
 }
@@ -111,7 +156,7 @@ export const maasPlans: Plan[] = [
 // ============ GSaaS ============
 
 export const gsaasHead: SectionHead = {
-  num: '05 —',
+  num: '06 —',
   name: 'Ground Station as a Service',
   title: 'A <em>ground segment,</em> as a service.',
 }

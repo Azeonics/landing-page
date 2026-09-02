@@ -46,8 +46,6 @@ export const keyPeopleIntro =
   'The leadership team setting Azeonics’ direction — across strategy, operations and growth — as we build India’s idea-to-orbit ecosystem.'
 
 // Order is intentional — do not re-sort.
-// TODO: add `bio` and `linkedin` for each as they are supplied.
-// Ravi Nirgudkar (Chief Strategic Officer) has no photo yet — renders the "RN" monogram.
 export const keyPeople: Person[] = [
   {
     name: 'B N Raao',
@@ -105,8 +103,6 @@ export const hodsIntro =
   'The department heads who turn the mission into delivered hardware and services — day in, day out, across sales, aerospace and engineering.'
 
 // Order is intentional — do not re-sort.
-// TODO: add `bio` and `linkedin` for each as they are supplied.
-// Prachi Kulkarni has no individual photo yet — renders the initials monogram.
 export const hods: Person[] = [
   {
     name: 'Nagesh Suryavanshi',

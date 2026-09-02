@@ -9,13 +9,15 @@ interface ProductCardProps {
   onOpen: (product: Product, trigger: HTMLButtonElement) => void;
   /** Ref callback used by the catalog's FLIP measurement map. */
   cardRef: (el: HTMLButtonElement | null) => void;
+  /** Eager-load the image (set on the first card so it can serve as LCP). */
+  priority?: boolean;
 }
 
 /**
  * Full-card button (keyboard-openable) for one catalog product: square
  * contain-fit image, serif name, mono category, clamped description.
  */
-export default function ProductCard({ product, onOpen, cardRef }: ProductCardProps) {
+export default function ProductCard({ product, onOpen, cardRef, priority = false }: ProductCardProps) {
   return (
     <button
       type="button"
@@ -31,6 +33,7 @@ export default function ProductCard({ product, onOpen, cardRef }: ProductCardPro
             fill
             sizes="(max-width: 480px) 92vw, (max-width: 720px) 46vw, (max-width: 980px) 31vw, 324px"
             className="mcat-card-photo"
+            priority={priority}
           />
         )}
       </span>

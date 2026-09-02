@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import {
@@ -178,12 +179,13 @@ export function PageTransitionProvider({ children }: { children: ReactNode }) {
       {children}
       <div className={`wipe wipe--${state}`} aria-hidden="true">
         <div className="wipe-panel" ref={panelRef}>
-          <img
+          <Image
             src="/assets/azeonics-logo-dark.png"
             alt=""
             className="wipe-logo"
             width={2121}
             height={746}
+            loading="eager"
           />
           <div className="wipe-telemetry">AZN &middot; ROUTE CHANGE &middot; {targetLabel}</div>
         </div>

@@ -70,7 +70,7 @@ function SceneRig() {
   const spinRef = useRef(0);
   const scrollRef = useRef({ p: 0 });
 
-  const cityLightPositions = useMemo(buildCityLights, []);
+  const cityLightPositions = useMemo(() => buildCityLights(), []);
 
   const orbitPath = useMemo<[number, number, number][]>(() => {
     const points: [number, number, number][] = [];

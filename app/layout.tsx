@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import { Instrument_Serif, JetBrains_Mono, Space_Grotesk } from 'next/font/google';
 import { PageTransitionProvider } from '@/components/layout/PageTransition';
@@ -31,6 +31,8 @@ const mono = JetBrains_Mono({
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://azeonics.com';
+// Optional privacy-friendly analytics — only loads when the domain env var is set.
+const plausibleDomain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
 const description =
   'Integrated precision manufacturing, testing and innovation facility for drones, satellites and aerospace systems.';
 
@@ -64,7 +66,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Azeonics |  From Earth Intelligence to Space Excellence.',
+    title: 'Azeonics | From Earth Intelligence to Space Excellence.',
     description
   },
   robots: {
@@ -73,10 +75,44 @@ export const metadata: Metadata = {
   }
 };
 
+export const viewport: Viewport = {
+  themeColor: '#020B1E',
+  colorScheme: 'dark'
+};
+
+// Organization schema for richer search results (knowledge panel, sitelinks).
+const orgJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Azeonics Private Limited',
+  alternateName: 'Azeonics',
+  url: siteUrl,
+  logo: `${siteUrl}/assets/azeonics-logo-dark.png`,
+  description,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '204, 2nd Floor, Opal Square IT Park, Wagle Estate, Padwal Nagar',
+    addressLocality: 'Thane',
+    addressRegion: 'Maharashtra',
+    postalCode: '400604',
+    addressCountry: 'IN'
+  },
+  // sameAs lists profiles of THIS organization only — sister brands (e.g.
+  // earthnow.tech) would pollute the knowledge-panel signal.
+  sameAs: ['https://www.linkedin.com/company/azeonics']
+};
+
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en" className={`${serif.variable} ${sans.variable} ${mono.variable}`}>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
+        {plausibleDomain ? (
+          <script defer data-domain={plausibleDomain} src="https://plausible.io/js/script.js" />
+        ) : null}
         <PageTransitionProvider>{children}</PageTransitionProvider>
       </body>
     </html>

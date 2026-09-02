@@ -124,7 +124,7 @@ export default function Catalog() {
     <section className="mcat" id="catalog">
       <div className="wrap">
         <Reveal>
-          <SectionHead head={catalogHead} />
+          <SectionHead head={catalogHead} level={1} />
         </Reveal>
 
         <Reveal delay={0.06}>
@@ -162,7 +162,7 @@ export default function Catalog() {
         </Reveal>
 
         <div className="mcat-groups">
-          {visibleGroups.map((group) => (
+          {visibleGroups.map((group, groupIndex) => (
             <section key={group.id} className="mcat-group" aria-label={group.title}>
               <header className="mcat-group-head">
                 <h3 className="mcat-group-title">{group.title}</h3>
@@ -171,12 +171,13 @@ export default function Catalog() {
               <div className="mcat-grid">
                 {products
                   .filter((product) => product.group === group.id)
-                  .map((product) => (
+                  .map((product, productIndex) => (
                     <ProductCard
                       key={product.name}
                       product={product}
                       onOpen={handleOpen}
                       cardRef={setCardEl(product.name)}
+                      priority={groupIndex === 0 && productIndex === 0}
                     />
                   ))}
               </div>
