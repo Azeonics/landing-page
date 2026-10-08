@@ -21,6 +21,22 @@ export default function Footer() {
               Idea 2 Orbit Innovation Hub — India&apos;s first integrated precision manufacturing, testing and
               innovation facility for drones, satellites and aerospace systems.
             </p>
+            {/* Official NVIDIA Inception badge — used as supplied (no recolor,
+                no reflow) and kept smaller than the Azeonics wordmark, per
+                NVIDIA's member-badge guidelines. */}
+            <a
+              className="mfoot-inception"
+              href="https://www.nvidia.com/en-us/startups/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/assets/nvidia-inception-program-badge.svg"
+                alt="NVIDIA Inception Program member badge"
+                width={500}
+                height={216}
+              />
+            </a>
           </div>
           <div className="mfoot-col">
             <h5>The Hub</h5>

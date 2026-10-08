@@ -105,9 +105,9 @@ export const hodsIntro =
 // Order is intentional — do not re-sort.
 export const hods: Person[] = [
   {
-    name: 'Nagesh Suryavanshi',
+    name: 'Naagesh Suryavanshi',
     role: 'EVP – Government & Strategic Business',
-    bio: 'Leads Azeonics’ government and strategic business, driving public-sector partnerships across space technology, satellite manufacturing, geospatial intelligence, AI and digital twins. Previously a leader at Genesys International, he brings deep experience delivering large-scale geospatial and digital-twin programs for governments and enterprises, and focuses on strengthening India’s indigenous capabilities across space, defence and geospatial domains.',
+    bio: 'Naagesh Suryavanshi brings 25+ years of experience in technology, government business and large-scale geospatial programmes. At Azeonics, he leads Government and Strategic Business across Space Technology and Satellite Manufacturing. He also drives growth for EarthNow, Azeonics’ geospatial intelligence subsidiary, delivering GIS, Digital Twin and AI/ML-powered satellite-data solutions to government and enterprise customers. Previously at Genesys International Corporation, he led large-scale GIS, mapping and Digital Twin programmes from opportunity to execution. He focuses on long-term partnerships and scalable solutions aligned with India’s space, infrastructure and digital ambitions.',
     photo: '/assets/team-photos/Nagesh-Sir.JPG',
     linkedin: 'https://www.linkedin.com/in/nagesh-suryavanshi-b1babb17/',
   },
@@ -134,8 +134,8 @@ export const hods: Person[] = [
   },
   {
     name: 'Hari Prasad Rai',
-    role: 'AVP Sales',
-    bio: 'AVP Sales at Azeonics, leading corporate and Urban Local Body (ULB) accounts with a focus on sustainability, green and impact and other verticals. He works at the intersection of Earth observation and climate action — carbon markets, geospatial analytics and digital-twin solutions — helping organisations turn satellite and geospatial data into measurable impact.',
+    role: 'AVP – Corporate Business',
+    bio: 'Leads Strategic Accounts and market expansion initiatives at Azeonics, driving the adoption and commercial growth of the company’s geospatial intelligence and AI-powered EarthNow platform across the Agriculture and BFSI sectors. He works closely with large enterprises, financial institutions, agri-input companies and carbon project partners to identify high-value opportunities and translate EarthNow’s satellite-driven intelligence into scalable, real-world solutions. His role spans strategic account development, enterprise partnerships, go-to-market strategy, solution positioning and revenue growth, with a focus on building long-term partnerships and expanding Azeonics’ presence across domestic and global markets.',
     photo: '/assets/team-photos/Hari-Prasad.JPG',
     linkedin: 'https://www.linkedin.com/in/hari-prasad-rai-973280a6/',
   },
