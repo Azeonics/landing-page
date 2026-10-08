@@ -229,6 +229,9 @@ h1, h2, h3, h4, p { overflow-wrap: break-word; }
   .mfoot-col a:hover { color: var(--teal-bright); }
   .mfoot a:focus-visible { outline: 2px solid var(--teal-bright); outline-offset: 3px; border-radius: 2px; }
   .mfoot-bot { display: flex; justify-content: space-between; padding-top: 24px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); flex-wrap: wrap; gap: 12px; }
+  /* NVIDIA-required trademark attribution — fine print, no uppercase
+     transform (the line must read exactly as NVIDIA specifies it). */
+  .mfoot-legal { margin-top: 14px; font-size: 10.5px; line-height: 1.6; color: var(--ink-3); }
 
   /* ============ UI PRIMITIVES ============ */
   .ui-section-head { display: grid; gap: 20px; }

@@ -71,6 +71,12 @@ export default function Footer() {
           <div>© 2026 Azeonics Private Limited — All rights reserved.</div>
           <div>Made in Thane, Maharashtra · ISRO-grade · Atmanirbhar Bharat</div>
         </div>
+        {/* Required legal attribution for use of the NVIDIA Inception member
+            badge, per NVIDIA's partner brand guidelines. */}
+        <p className="mfoot-legal">
+          NVIDIA, the NVIDIA logo and NVIDIA Inception are trademarks and/or registered trademarks
+          of NVIDIA Corporation in the U.S. and other countries.
+        </p>
       </div>
     </footer>
   );
