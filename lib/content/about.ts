@@ -108,7 +108,7 @@ export const hods: Person[] = [
     name: 'Naagesh Suryavanshi',
     role: 'EVP – Government & Strategic Business',
     bio: 'Naagesh Suryavanshi brings 25+ years of experience in technology, government business and large-scale geospatial programmes. At Azeonics, he leads Government and Strategic Business across Space Technology and Satellite Manufacturing. He also drives growth for EarthNow, Azeonics’ geospatial intelligence subsidiary, delivering GIS, Digital Twin and AI/ML-powered satellite-data solutions to government and enterprise customers. Previously at Genesys International Corporation, he led large-scale GIS, mapping and Digital Twin programmes from opportunity to execution. He focuses on long-term partnerships and scalable solutions aligned with India’s space, infrastructure and digital ambitions.',
-    photo: '/assets/team-photos/Nagesh-Sir.JPG',
+    photo: '/assets/team-photos/Naagesh-Suryavanshi.jpg',
     linkedin: 'https://www.linkedin.com/in/nagesh-suryavanshi-b1babb17/',
   },
   {
@@ -129,7 +129,7 @@ export const hods: Person[] = [
     name: 'Santosh Satyam',
     role: 'EVP Sales',
     bio: 'EVP Sales at Azeonics, leading the company’s market and sales function and its SpaceTech skilling programs. He is also Chief Growth Officer at EarthNow — Azeonics’ sister company — driving growth and go-to-market across space-tech and deep-tech, and is a frequent keynote speaker on space-tech education and skilling.',
-    photo: '/assets/team-photos/Santosh-Satyam.JPG',
+    photo: '/assets/team-photos/Santosh-Satyam.jpg',
     linkedin: 'https://www.linkedin.com/in/santosh-satyam-68541a8/',
   },
   {
