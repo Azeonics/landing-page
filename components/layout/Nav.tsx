@@ -88,15 +88,18 @@ export default function Nav() {
       <nav className="mnav" aria-label="Main navigation">
         <div className="mnav-inner">
           <TransitionLink className="mnav-brand" href="/" aria-label="Azeonics — Idea 2 Orbit">
-            {/* Full brand lockup — wordmark + built-in IDEA 2 ORBIT tagline + TM. */}
-            <Image
-              className="mnav-wordmark"
-              src="/assets/azeonics-logo-dark-bg.svg"
-              alt="Azeonics — Idea 2 Orbit"
-              width={616}
-              height={199}
-              priority
-            />
+            <span className="brand-mark">
+              <Image
+                className="mnav-wordmark"
+                src="/assets/azeonics-wordmark-dark.png"
+                alt="Azeonics"
+                width={1876}
+                height={531}
+                priority
+              />
+              <span className="brand-tm" aria-hidden="true">TM</span>
+            </span>
+            <span className="mnav-tagline">Idea 2 Orbit</span>
           </TransitionLink>
 
           <div className="mnav-links">

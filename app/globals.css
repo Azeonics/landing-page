@@ -148,18 +148,18 @@ h1, h2, h3, h4, p { overflow-wrap: break-word; }
   .mnav { position: sticky; top: 0; z-index: 50; background: color-mix(in oklab, var(--bg) 78%, transparent); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); }
   .mnav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; max-width: var(--wrap-max); margin: 0 auto; padding: 12px var(--wrap-pad); }
 
-  .mnav-brand { display: flex; align-items: center; }
-  /* Brand lockup includes the IDEA 2 ORBIT tagline — sized so it stays legible. */
-  .mnav-wordmark { height: 56px; width: auto; display: block; }
-  /* Step the lockup down as the bar tightens so links never wrap. */
-  @media (max-width: 1180px) {
-    .mnav-wordmark { height: 44px; }
-    .mnav-links { gap: 20px; }
-    .mnav-links a { white-space: nowrap; }
-    .mnav-cta { white-space: nowrap; }
-  }
+  .mnav-brand { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .mnav-wordmark { height: 34px; width: auto; display: block; }
+  .mnav-tagline { display: flex; align-items: center; gap: 7px; align-self: stretch; font-family: var(--mono); font-size: 8px; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; white-space: nowrap; color: var(--teal); }
+  .mnav-tagline::before, .mnav-tagline::after { content: ""; height: 1px; flex: 1; background: currentColor; opacity: 0.55; }
+  /* Trademark superscript pinned to the wordmark's top-right. */
+  .brand-mark { position: relative; display: inline-block; }
+  .brand-tm { position: absolute; top: -4px; right: -13px; font-family: var(--sans); font-size: 7px; font-weight: 700; letter-spacing: 0.04em; line-height: 1; color: var(--ink); }
   @media (max-width: 720px) {
-    .mnav-wordmark { height: 46px; }
+    .mnav-wordmark { height: 28px; }
+    .mnav-brand { gap: 4px; }
+    .mnav-tagline { font-size: 7px; letter-spacing: 0.22em; gap: 5px; }
+    .brand-tm { font-size: 6px; right: -11px; }
   }
 
   .mnav-links { display: flex; gap: 32px; font-size: 14px; }
@@ -217,9 +217,11 @@ h1, h2, h3, h4, p { overflow-wrap: break-word; }
     .mfoot-grid { grid-template-columns: 1fr 1fr; }
     .mfoot-brand { grid-column: 1 / -1; }
   }
-  .mfoot-brand-link { display: inline-flex; }
-  /* Brand lockup includes the IDEA 2 ORBIT tagline — larger here so it reads easily. */
-  .mfoot-wordmark { height: 76px; width: auto; display: block; }
+  .mfoot-brand-link { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+  .mfoot-wordmark { height: 44px; width: auto; display: block; }
+  .mfoot-tagline { display: flex; align-items: center; gap: 7px; width: 200px; font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; white-space: nowrap; color: var(--teal); }
+  .mfoot-tagline::before, .mfoot-tagline::after { content: ""; height: 1px; flex: 1; background: currentColor; opacity: 0.55; }
+  .mfoot-brand .brand-tm { font-size: 8px; right: -15px; }
   .mfoot-brand p { margin-top: 16px; font-size: 14px; line-height: 1.6; color: var(--ink-3); max-width: 34ch; }
   /* NVIDIA Inception member badge — official art, fixed proportions; width
      stays below the Azeonics wordmark's rendered width per NVIDIA rules. */

@@ -8,13 +8,17 @@ export default function Footer() {
         <div className="mfoot-grid">
           <div className="mfoot-brand">
             <Link className="mfoot-brand-link" href="/" aria-label="Azeonics">
-              <Image
-                className="mfoot-wordmark"
-                src="/assets/azeonics-logo-dark-bg.svg"
-                alt="Azeonics — Idea 2 Orbit"
-                width={616}
-                height={199}
-              />
+              <span className="brand-mark">
+                <Image
+                  className="mfoot-wordmark"
+                  src="/assets/azeonics-wordmark-dark.png"
+                  alt="Azeonics"
+                  width={1876}
+                  height={531}
+                />
+                <span className="brand-tm" aria-hidden="true">TM</span>
+              </span>
+              <span className="mfoot-tagline">Idea 2 Orbit</span>
             </Link>
             <p>
               Idea 2 Orbit Innovation Hub — India&apos;s first integrated precision manufacturing, testing and
